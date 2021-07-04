@@ -1,0 +1,153 @@
+
+@mixin clearfix {
+  &::after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+      @media only screen and (max-width: 37.5em) { @content };    //600px
+  }
+  @if $breakpoint == tab-port {
+      @media only screen and (max-width: 56.25em) { @content };     //900px
+  }
+  @if $breakpoint == tab-land {
+      @media only screen and (max-width: 75em) { @content };    //1200px
+  }
+  @if $breakpoint == big-desktop {
+      @media only screen and (min-width: 112.5em) { @content };    //1800
+  }
+}
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+.header{
+  height: 87vh;
+  width: 85vw;
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.6),
+        rgba($color-primary-dark, 0.6)),
+    url(https://cdn.pixabay.com/photo/2017/08/10/06/10/guy-2618928_1280.jpg);
+ 
+
+  @include respond(tab-port) {
+    height: 88vh;
+    width: 85vw;
+    }
+
+    @include respond(phone) {
+      height: 86vh;
+    width: 85vw;
+  }
+  
+}
+  .header__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary {
+  color: whitesmoke;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  
+
+  &--main {
+      display: block;
+      font-size: 6rem;
+      font-weight: 400;
+      letter-spacing: 3rem;
+      margin-bottom: 2rem;
+  
+      animation-name: moveInLeft;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+      
+      @include respond(phone) {
+          letter-spacing: 0rem;
+          font-family: 1rem;
+      }
+      /*
+      animation-delay: 3s;
+      animation-iteration-count: 3;
+      */
+  }
+  
+  &--sub {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1rem;
+      animation: moveInRight 1s ease-out;
+
+      @include respond(phone) {
+          letter-spacing: .5rem;
+      }
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+      opacity: 0;
+      transform: translateX(-10rem);
+  }
+
+  80% {
+      transform: translateX(1rem);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+      opacity: 0;
+      transform: translateX(10rem);
+  }
+
+  80% {
+      transform: translateX(-1rem);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}

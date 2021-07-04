@@ -1,0 +1,50 @@
+<mat-toolbar class="mat-elevation-z8">
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+      menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
+  </button>
+  ISSTA
+</mat-toolbar>
+
+<mat-sidenav-container class="contain">
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+    <img class="avatar mat-elevation-z8"
+      src="data:image/png;base64,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" />
+
+    <h4 class="name">Issta</h4>
+    <p class="designation">Employees Management System</p>
+
+    <mat-divider></mat-divider>
+
+    <button routerLink="home" mat-button class="menu-button">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </button>
+    <button mat-button routerLink="employee" class="menu-button">
+      <mat-icon>person</mat-icon>
+      <span>Employees</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>info</mat-icon>
+      <span>About</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button">
+      <mat-icon>help</mat-icon>
+      <span>Help</span>
+    </button>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,4 @@
+<div class="warper"> </div>
+<ng2-smart-table class="table" [settings]="settings" (deleteConfirm)="onDeleteConfirm($event)"
+  (editConfirm)="onSaveConfirm($event)" (createConfirm)="onCreateConfirm($event)" (custom)="onCustomAction($event)"
+  [source]=" data"></ng2-smart-table>
