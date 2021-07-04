@@ -29,7 +29,7 @@ export class ShowEmpComponent implements OnInit {
   ngOnInit(): void {
     this.refreshEmpList();
   }
-  settings = {
+  settings = {  //all table settings
     attr: {
       class: 'table table-bordered'
     },
@@ -119,7 +119,7 @@ export class ShowEmpComponent implements OnInit {
     }
   };
 
-  onCreateConfirm(event) {
+  onCreateConfirm(event) { // handle on create event
 
     if (window.confirm('Are you sure you want to create?')) {
 
@@ -134,7 +134,7 @@ export class ShowEmpComponent implements OnInit {
 
 
 
-  onSaveConfirm(event) {
+  onSaveConfirm(event) { // handle on edit event
 
     if (window.confirm('Are you sure you want to save?')) {
       this.service.updateEmployee(event.newData).subscribe(
@@ -146,7 +146,7 @@ export class ShowEmpComponent implements OnInit {
     }
   }
 
-  onDeleteConfirm(event) {
+  onDeleteConfirm(event) { //// handle on delete event
     if (window.confirm('Are you sure you want to delete?')) {
       this.service.deleteEmployee(event.data).subscribe(
         (data) => console.log(data)
@@ -165,7 +165,7 @@ export class ShowEmpComponent implements OnInit {
     });
   }
 
-  refreshEmpList() {
+  refreshEmpList() { // get the employees list from the server
     this.service.getEmpList().subscribe(employeesList => {
       console.log(employeesList)
       this.data = employeesList;

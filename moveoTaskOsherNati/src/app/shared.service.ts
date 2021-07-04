@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
-@Injectable({
+@Injectable({  //service that help us send assiments to the server 
   providedIn: 'root'
 })
 export class SharedService {

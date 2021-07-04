@@ -14,7 +14,7 @@ export class AppComponent {
 
   constructor(private observer: BreakpointObserver) { }
 
-  ngAfterViewInit() {
+  ngAfterViewInit() { //responsble to hide the menu on mobile devices and save place
     this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
       if (res.matches) {
         this.sidenav.mode = 'over';
