@@ -123,9 +123,9 @@ export class ShowEmpComponent implements OnInit {
 
     if (window.confirm('Are you sure you want to create?')) {
 
-      this.service.addEmployee(event.newData).subscribe(
-        (data) => console.log(data)
-      );
+      /*  this.service.addEmployee(event.newData).subscribe(
+          (data) => console.log(data)
+        );*/
       event.confirm.resolve(event.newData);
     } else {
       event.confirm.reject();
@@ -137,9 +137,9 @@ export class ShowEmpComponent implements OnInit {
   onSaveConfirm(event) { // handle on edit event
 
     if (window.confirm('Are you sure you want to save?')) {
-      this.service.updateEmployee(event.newData).subscribe(
-        (data) => console.log(data)
-      );
+      /* this.service.updateEmployee(event.newData).subscribe(
+         (data) => console.log(data)
+       );*/
       event.confirm.resolve(event.newData);
     } else {
       event.confirm.reject();
@@ -148,9 +148,9 @@ export class ShowEmpComponent implements OnInit {
 
   onDeleteConfirm(event) { //// handle on delete event
     if (window.confirm('Are you sure you want to delete?')) {
-      this.service.deleteEmployee(event.data).subscribe(
+      /*this.service.deleteEmployee(event.data).subscribe(
         (data) => console.log(data)
-      );
+      );*/
       event.confirm.resolve();
     } else {
       event.confirm.reject();
@@ -159,10 +159,10 @@ export class ShowEmpComponent implements OnInit {
 
   onCustomAction(event) {
     console.log(event.data);
-    this.service.calcSalry(event.data).subscribe(salary => {
-      alert(`the salary until now is ${salary} $`);
-
-    });
+    /* this.service.calcSalry(event.data).subscribe(salary => {
+       alert(`the salary until now is ${salary} $`);
+ 
+     });*/
   }
 
   refreshEmpList() { // get the employees list from the server
