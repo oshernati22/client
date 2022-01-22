@@ -1,6 +1,7 @@
 # Demo
-
+### free server be patient (:
 https://altshareoshertask.herokuapp.com/
+
 
 
 ##  Commands and Explanations 
