@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(https://altshare.com/wp-content/uploads/2021/08/Vector-2-1.png);
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.head_container {
+  background-color: #ffffffbd;
+  height: 17rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-collapse: separate;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 8px #d0d0d0;
+  z-index: 99;
+}
+.sub_head {
+  font-size: 3rem;
+  color: #5454547a;
+  font-weight: 700;
+  padding: 2rem;
+  -webkit-animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
